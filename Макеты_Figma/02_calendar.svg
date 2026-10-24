@@ -1,319 +1,254 @@
-<svg width="1440" height="900" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
-  <defs>
-    <filter id="card-shadow" x="-4" y="-2" width="108%" height="110%" filterUnits="userSpaceOnUse">
-      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.05" />
-      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#0F172A" flood-opacity="0.04" />
-    </filter>
-    <filter id="modal-shadow" x="-20" y="-10" width="120%" height="120%" filterUnits="userSpaceOnUse">
-      <feDropShadow dx="0" dy="20" stdDeviation="25" flood-color="#0F172A" flood-opacity="0.25" />
-    </filter>
-    <linearGradient id="hero-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#4F46E5" />
-      <stop offset="100%" stop-color="#7C3AED" />
-    </linearGradient>
-    <linearGradient id="accent-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#6366F1" />
-      <stop offset="100%" stop-color="#8B5CF6" />
-    </linearGradient>
-  </defs>
-  
-  <rect width="1440" height="900" fill="#F8FAFC" />
-  <!-- Title Metadata for Figma -->
-  <desc>02_Календарь_Пиковая_Нагрузка</desc>
+<svg width="1440" height="900" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="1440" height="900" fill="#FAFAFA" />
+  <desc>02_Календарь_Минимализм</desc>
 
-  <g id="Sidebar" width="260">
-    <rect width="260" height="900" fill="#0F172A" />
+  <!-- Sidebar -->
+  <g id="Sidebar" transform="translate(0, 0)">
+    <rect width="240" height="900" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1" />
     
-    <!-- Logo & Brand -->
-    <g id="Logo" transform="translate(24, 28)">
-      <rect width="36" height="36" rx="10" fill="url(#accent-grad)" />
-      <text x="18" y="24" fill="#FFFFFF" font-size="18" font-weight="bold" text-anchor="middle">⏱</text>
-      <text x="48" y="24" fill="#FFFFFF" font-size="18" font-weight="700">StudyPulse</text>
-      <text x="48" y="38" fill="#94A3B8" font-size="11" font-weight="500">УЧЁТ ДЕДЛАЙНОВ • 921701</text>
+    <!-- Brand -->
+    <g id="Brand" transform="translate(24, 28)">
+      <rect width="20" height="20" rx="4" fill="#18181B" />
+      <rect x="5" y="5" width="10" height="10" rx="2" fill="#FFFFFF" />
+      <text x="32" y="16" fill="#18181B" font-size="14" font-weight="600" letter-spacing="-0.2">StudyPulse</text>
+      <text x="32" y="30" fill="#71717A" font-size="11">Группа 921701</text>
     </g>
     
     <!-- Nav Items -->
-    <g id="Navigation" transform="translate(16, 96)">
+    <g id="NavList" transform="translate(12, 88)">
       <g id="NavItem-dashboard" transform="translate(0, 0)">
-        <rect width="228" height="44" rx="8" fill="transparent" />
-        
-        <text x="16" y="28" font-size="16">⚡</text>
-        <text x="44" y="28" fill="#94A3B8" font-size="14" font-weight="500">Главный дашборд</text>
+        <rect width="216" height="36" rx="6" fill="transparent" />
+        <circle cx="16" cy="18" r="3" fill="#A1A1AA" />
+        <text x="30" y="22" fill="#71717A" font-size="13" font-weight="400">Обзор</text>
       </g>
-      <g id="NavItem-calendar" transform="translate(0, 52)">
-        <rect width="228" height="44" rx="8" fill="#1E293B" />
-        <rect x='0' y='6' width='4' height='32' rx='2' fill='#6366F1' />
-        <text x="16" y="28" font-size="16">📅</text>
-        <text x="44" y="28" fill="#FFFFFF" font-size="14" font-weight="600">Календарь дедлайнов</text>
-        <rect x="175" y="12" width="42" height="20" rx="10" fill="#8B5CF6" />
-        <text x="196" y="26" fill="#FFFFFF" font-size="11" font-weight="600" text-anchor="middle">N(d)≥3</text>
+      <g id="NavItem-calendar" transform="translate(0, 42)">
+        <rect width="216" height="36" rx="6" fill="#F4F4F5" />
+        <circle cx="16" cy="18" r="3" fill="#18181B" />
+        <text x="30" y="22" fill="#18181B" font-size="13" font-weight="600">Календарь</text>
+        <rect x="164" y="9" width="44" height="18" rx="4" fill="#F4F4F5" />
+        <text x="186" y="22" fill="#71717A" font-size="10" font-weight="500" text-anchor="middle">3</text>
       </g>
-      <g id="NavItem-subjects" transform="translate(0, 104)">
-        <rect width="228" height="44" rx="8" fill="transparent" />
-        
-        <text x="16" y="28" font-size="16">📚</text>
-        <text x="44" y="28" fill="#94A3B8" font-size="14" font-weight="500">Дисциплины</text>
+      <g id="NavItem-subjects" transform="translate(0, 84)">
+        <rect width="216" height="36" rx="6" fill="transparent" />
+        <circle cx="16" cy="18" r="3" fill="#A1A1AA" />
+        <text x="30" y="22" fill="#71717A" font-size="13" font-weight="400">Дисциплины</text>
       </g>
-      <g id="NavItem-tasks" transform="translate(0, 156)">
-        <rect width="228" height="44" rx="8" fill="transparent" />
-        
-        <text x="16" y="28" font-size="16">📝</text>
-        <text x="44" y="28" fill="#94A3B8" font-size="14" font-weight="500">Задания и варианты</text>
-        <rect x="175" y="12" width="42" height="20" rx="10" fill="#EF4444" />
-        <text x="196" y="26" fill="#FFFFFF" font-size="11" font-weight="600" text-anchor="middle">2</text>
+      <g id="NavItem-tasks" transform="translate(0, 126)">
+        <rect width="216" height="36" rx="6" fill="transparent" />
+        <circle cx="16" cy="18" r="3" fill="#A1A1AA" />
+        <text x="30" y="22" fill="#71717A" font-size="13" font-weight="400">Задания</text>
+        <rect x="164" y="9" width="44" height="18" rx="4" fill="#F4F4F5" />
+        <text x="186" y="22" fill="#71717A" font-size="10" font-weight="500" text-anchor="middle">2</text>
       </g>
-      <g id="NavItem-announcements" transform="translate(0, 208)">
-        <rect width="228" height="44" rx="8" fill="transparent" />
-        
-        <text x="16" y="28" font-size="16">📢</text>
-        <text x="44" y="28" fill="#94A3B8" font-size="14" font-weight="500">Объявления группы</text>
-        <rect x="175" y="12" width="42" height="20" rx="10" fill="#EF4444" />
-        <text x="196" y="26" fill="#FFFFFF" font-size="11" font-weight="600" text-anchor="middle">1</text>
+      <g id="NavItem-announcements" transform="translate(0, 168)">
+        <rect width="216" height="36" rx="6" fill="transparent" />
+        <circle cx="16" cy="18" r="3" fill="#A1A1AA" />
+        <text x="30" y="22" fill="#71717A" font-size="13" font-weight="400">Объявления</text>
       </g>
-      <g id="NavItem-analytics" transform="translate(0, 260)">
-        <rect width="228" height="44" rx="8" fill="transparent" />
-        
-        <text x="16" y="28" font-size="16">📊</text>
-        <text x="44" y="28" fill="#94A3B8" font-size="14" font-weight="500">Матрица успеваемости</text>
+      <g id="NavItem-analytics" transform="translate(0, 210)">
+        <rect width="216" height="36" rx="6" fill="transparent" />
+        <circle cx="16" cy="18" r="3" fill="#A1A1AA" />
+        <text x="30" y="22" fill="#71717A" font-size="13" font-weight="400">Матрица группы</text>
       </g>
-      <g id="NavItem-profile" transform="translate(0, 312)">
-        <rect width="228" height="44" rx="8" fill="transparent" />
-        
-        <text x="16" y="28" font-size="16">👤</text>
-        <text x="44" y="28" fill="#94A3B8" font-size="14" font-weight="500">Личный кабинет</text>
+      <g id="NavItem-profile" transform="translate(0, 252)">
+        <rect width="216" height="36" rx="6" fill="transparent" />
+        <circle cx="16" cy="18" r="3" fill="#A1A1AA" />
+        <text x="30" y="22" fill="#71717A" font-size="13" font-weight="400">Профиль</text>
       </g>
     </g>
     
-    <!-- System Status & Belarus Law -->
-    <g id="LawCompliance" transform="translate(20, 720)">
-      <rect width="220" height="58" rx="8" fill="#1E293B" />
-      <text x="14" y="24" fill="#10B981" font-size="12">🛡 Закон РБ № 99-З</text>
-      <text x="14" y="44" fill="#64748B" font-size="11">Персональные данные защищены</text>
-    </g>
-    
-    <!-- User Card -->
-    <g id="CurrentUser" transform="translate(20, 800)">
-      <rect width="220" height="72" rx="12" fill="#1E293B" />
-      <circle cx="36" cy="36" r="20" fill="#6366F1" />
-      <text x="36" y="42" fill="#FFFFFF" font-size="14" font-weight="bold" text-anchor="middle">ДК</text>
-      <text x="68" y="30" fill="#FFFFFF" font-size="13" font-weight="600">Данила Кабердин</text>
-      <text x="68" y="46" fill="#10B981" font-size="11" font-weight="500">● Студент (Подгруппа 1)</text>
-      <text x="194" y="40" fill="#64748B" font-size="16">⚙</text>
+    <!-- Footer User Info -->
+    <g id="SidebarUser" transform="translate(20, 820)">
+      <line x1="0" y1="0" x2="200" y2="0" stroke="#F4F4F5" />
+      <rect x="0" y="16" width="32" height="32" rx="16" fill="#F4F4F5" stroke="#E4E4E7" />
+      <text x="16" y="37" fill="#18181B" font-size="11" font-weight="600" text-anchor="middle">ДК</text>
+      <text x="42" y="30" fill="#18181B" font-size="12" font-weight="500">Данила Кабердин</text>
+      <text x="42" y="44" fill="#71717A" font-size="11">Студент • ПГ-1</text>
     </g>
   </g>
 
 
-  <g id="Header" transform="translate(260, 0)">
-    <rect width="1180" height="72" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1" />
+  <!-- Header -->
+  <g id="Header" transform="translate(240, 0)">
+    <rect width="1200" height="70" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1" />
+    <text x="32" y="34" fill="#18181B" font-size="18" font-weight="600" letter-spacing="-0.3">Календарь</text>
+    <text x="32" y="52" fill="#71717A" font-size="12">Октябрь 2026 • Расчёт пиковой нагрузки N(d) ≥ 3</text>
     
-    <text x="32" y="32" fill="#0F172A" font-size="20" font-weight="700">Интерактивный календарь дедлайнов</text>
-    <text x="32" y="52" fill="#64748B" font-size="12">Октябрь 2026 • Расчёт пиковой нагрузки N(d) ≥ 3 по п. 4.3 ТЗ</text>
-    
-    <!-- Search Bar -->
-    <g id="SearchBar" transform="translate(620, 16)">
-      <rect width="240" height="40" rx="8" fill="#F1F5F9" stroke="#E2E8F0" />
-      <text x="14" y="25" fill="#94A3B8" font-size="14">🔍</text>
-      <text x="38" y="25" fill="#94A3B8" font-size="13">Поиск дисциплины или задания...</text>
+    <!-- Action Button -->
+    <g id="HeaderAction" transform="translate(980, 18)">
+      <rect width="140" height="34" rx="6" fill="#18181B" />
+      <text x="70" y="21" fill="#FFFFFF" font-size="12" font-weight="500" text-anchor="middle">+ Новое событие</text>
     </g>
-    
-    <!-- Notifications Bell -->
-    <g id="Bell" transform="translate(880, 18)">
-      <rect width="36" height="36" rx="8" fill="#F8FAFC" stroke="#E2E8F0" />
-      <text x="11" y="24" font-size="16">🔔</text>
-      <circle cx="27" cy="11" r="5" fill="#EF4444" stroke="#FFFFFF" stroke-width="1.5" />
-    </g>
-    
-    <!-- Quick Action Button -->
-    <g id="QuickActionButton" transform="translate(936, 16)">
-      <rect width="180" height="40" rx="8" fill="#4F46E5" />
-      <text x="90" y="25" fill="#FFFFFF" font-size="13" font-weight="600" text-anchor="middle">+ Новое событие</text>
-    </g>
+
   </g>
 
-  <g id="CalendarContent" transform="translate(292, 96)">
-    <!-- Calendar Controls Bar -->
-    <g id="CalendarControls" filter="url(#card-shadow)">
-      <rect width="1116" height="64" rx="12" fill="#FFFFFF" stroke="#E2E8F0" />
+  <g id="CalendarBody" transform="translate(272, 94)">
+    
+    <!-- Controls Header -->
+    <g id="CalNav">
+      <rect width="1065" height="52" rx="8" fill="#FFFFFF" stroke="#E5E7EB" />
+      <text x="20" y="32" fill="#18181B" font-size="15" font-weight="600">Октябрь 2026</text>
       
-      <text x="24" y="38" fill="#0F172A" font-size="18" font-weight="700">Октябрь 2026 г.</text>
-      
-      <!-- Prev / Next / Today Buttons -->
-      <g transform="translate(180, 16)">
-        <rect width="32" height="32" rx="6" fill="#F1F5F9" />
-        <text x="16" y="21" fill="#334155" font-size="14" text-anchor="middle">‹</text>
-        <rect x="38" y="0" width="32" height="32" rx="6" fill="#F1F5F9" />
-        <text x="54" y="21" fill="#334155" font-size="14" text-anchor="middle">›</text>
-        <rect x="76" y="0" width="70" height="32" rx="6" fill="#F1F5F9" />
-        <text x="111" y="20" fill="#334155" font-size="12" font-weight="600" text-anchor="middle">Сегодня</text>
+      <!-- Simple button group -->
+      <g transform="translate(140, 12)">
+        <rect width="28" height="28" rx="4" fill="#F4F4F5" />
+        <text x="14" y="19" fill="#18181B" font-size="12" text-anchor="middle">‹</text>
+        
+        <rect x="32" y="0" width="28" height="28" rx="4" fill="#F4F4F5" />
+        <text x="46" y="19" fill="#18181B" font-size="12" text-anchor="middle">›</text>
+        
+        <rect x="68" y="0" width="70" height="28" rx="4" fill="#F4F4F5" />
+        <text x="103" y="18" fill="#18181B" font-size="11" font-weight="500" text-anchor="middle">Сегодня</text>
       </g>
       
-      <!-- Legend for Priorities & Peak Load -->
-      <g transform="translate(520, 22)">
-        <circle cx="8" cy="10" r="5" fill="#EF4444" />
-        <text x="20" y="14" fill="#475569" font-size="12">Персональный [П]</text>
+      <!-- Minimalist Legend -->
+      <g transform="translate(700, 20)">
+        <circle cx="0" cy="6" r="3" fill="#DC2626" />
+        <text x="8" y="10" fill="#71717A" font-size="11">Персональный</text>
         
-        <circle cx="150" cy="10" r="5" fill="#F59E0B" />
-        <text x="162" y="14" fill="#475569" font-size="12">Подгруппа [ПГ]</text>
+        <circle cx="100" cy="6" r="3" fill="#D97706" />
+        <text x="108" y="10" fill="#71717A" font-size="11">Подгруппа</text>
         
-        <circle cx="280" cy="10" r="5" fill="#3B82F6" />
-        <text x="292" y="14" fill="#475569" font-size="12">Общий [ОБЩ]</text>
+        <circle cx="180" cy="6" r="3" fill="#2563EB" />
+        <text x="188" y="10" fill="#71717A" font-size="11">Общий</text>
         
-        <rect x="400" y="0" width="170" height="22" rx="4" fill="#FEE2E2" stroke="#FCA5A5" />
-        <text x="485" y="15" fill="#991B1B" font-size="11" font-weight="700" text-anchor="middle">🔥 Пик нагрузки N(d)≥3</text>
+        <rect x="245" y="-3" width="100" height="18" rx="3" fill="#FEF2F2" />
+        <text x="295" y="10" fill="#991B1B" font-size="10" font-weight="500" text-anchor="middle">Пик N(d) ≥ 3</text>
       </g>
     </g>
     
-    <!-- Calendar Grid (Width 760) & Selected Day Drawer (Width 336) -->
-    <g id="CalendarBody" transform="translate(0, 80)">
-      <!-- Main Month Grid Card -->
-      <g id="MonthGrid" filter="url(#card-shadow)">
-        <rect width="760" height="690" rx="12" fill="#FFFFFF" stroke="#E2E8F0" />
+    <!-- Calendar Grid (Width 740) & Selected Day (305) -->
+    <g id="GridSection" transform="translate(0, 68)">
+      <g id="MonthTable">
+        <rect width="740" height="700" rx="8" fill="#FFFFFF" stroke="#E5E7EB" />
         
-        <!-- Day Names -->
-        <text x="71" y="32" fill="#64748B" font-size="13" font-weight="600" text-anchor="middle">Пн</text>
-        <text x="173" y="32" fill="#64748B" font-size="13" font-weight="600" text-anchor="middle">Вт</text>
-        <text x="275" y="32" fill="#64748B" font-size="13" font-weight="600" text-anchor="middle">Ср</text>
-        <text x="377" y="32" fill="#64748B" font-size="13" font-weight="600" text-anchor="middle">Чт</text>
-        <text x="479" y="32" fill="#64748B" font-size="13" font-weight="600" text-anchor="middle">Пт</text>
-        <text x="581" y="32" fill="#64748B" font-size="13" font-weight="600" text-anchor="middle">Сб</text>
-        <text x="683" y="32" fill="#64748B" font-size="13" font-weight="600" text-anchor="middle">Вс</text>
-        <line x1="20" y1="46" x2="740" y2="46" stroke="#E2E8F0" stroke-width="1" />
-        <rect x="20" y="56" width="100" height="118" rx="6" fill="#F8FAFC" />
-        <rect x="122" y="56" width="100" height="118" rx="6" fill="#F8FAFC" />
-        <rect x="224" y="56" width="100" height="118" rx="6" fill="#F8FAFC" />
-        <rect x="326" y="56" width="100" height="118" rx="6" fill="#F8FAFC" />
-        <rect x="428" y="56" width="100" height="118" rx="6" fill="#FFFFFF" stroke="#E2E8F0" />
-        <text x="436" y="74" fill="#64748B" font-size="13">1</text>
-        <rect x="530" y="56" width="100" height="118" rx="6" fill="#FFFFFF" stroke="#E2E8F0" />
-        <text x="538" y="74" fill="#64748B" font-size="13">2</text>
-        <rect x="632" y="56" width="100" height="118" rx="6" fill="#FFFFFF" stroke="#E2E8F0" />
-        <text x="640" y="74" fill="#64748B" font-size="13">3</text>
-        <rect x="20" y="180" width="100" height="118" rx="6" fill="#FFFFFF" stroke="#E2E8F0" />
-        <text x="28" y="198" fill="#64748B" font-size="13">4</text>
-        <rect x="122" y="180" width="100" height="118" rx="6" fill="#FFFFFF" stroke="#E2E8F0" />
-        <text x="130" y="198" fill="#64748B" font-size="13">5</text>
-        <rect x="224" y="180" width="100" height="118" rx="6" fill="#FFFFFF" stroke="#E2E8F0" />
-        <text x="232" y="198" fill="#64748B" font-size="13">6</text>
-        <rect x="326" y="180" width="100" height="118" rx="6" fill="#FFFFFF" stroke="#E2E8F0" />
-        <text x="334" y="198" fill="#64748B" font-size="13">7</text>
-        <rect x="428" y="180" width="100" height="118" rx="6" fill="#FFFFFF" stroke="#E2E8F0" />
-        <text x="436" y="198" fill="#64748B" font-size="13">8</text>
-        <rect x="530" y="180" width="100" height="118" rx="6" fill="#FFFFFF" stroke="#E2E8F0" />
-        <text x="538" y="198" fill="#64748B" font-size="13">9</text>
-        <rect x="632" y="180" width="100" height="118" rx="6" fill="#FFFFFF" stroke="#E2E8F0" />
-        <text x="640" y="198" fill="#64748B" font-size="13">10</text>
-        <rect x="20" y="304" width="100" height="118" rx="6" fill="#FFFFFF" stroke="#E2E8F0" />
-        <text x="28" y="322" fill="#64748B" font-size="13">11</text>
-        <rect x="122" y="304" width="100" height="118" rx="6" fill="#FFFFFF" stroke="#E2E8F0" />
-        <text x="130" y="322" fill="#1E293B" font-size="13" font-weight="600">12</text>
-        <rect x="126" y="334" width="92" height="24" rx="4" fill="#E0E7FF" />
-        <text x="130" y="350" fill="#3730A3" font-size="9" font-weight="600">Сети • Тест 2</text>
-        <rect x="224" y="304" width="100" height="118" rx="6" fill="#FFFFFF" stroke="#E2E8F0" />
-        <text x="232" y="322" fill="#64748B" font-size="13">13</text>
-        <rect x="326" y="304" width="100" height="118" rx="6" fill="#FFFFFF" stroke="#E2E8F0" />
-        <text x="334" y="322" fill="#64748B" font-size="13">14</text>
-        <rect x="428" y="304" width="100" height="118" rx="6" fill="#FFFFFF" stroke="#E2E8F0" />
-        <text x="436" y="322" fill="#64748B" font-size="13">15</text>
-        <rect x="530" y="304" width="100" height="118" rx="6" fill="#FFFFFF" stroke="#E2E8F0" />
-        <text x="538" y="322" fill="#64748B" font-size="13">16</text>
-        <rect x="632" y="304" width="100" height="118" rx="6" fill="#FFFFFF" stroke="#E2E8F0" />
-        <text x="640" y="322" fill="#64748B" font-size="13">17</text>
-        <rect x="20" y="428" width="100" height="118" rx="6" fill="#FFFFFF" stroke="#E2E8F0" />
-        <text x="28" y="446" fill="#64748B" font-size="13">18</text>
-        <rect x="122" y="428" width="100" height="118" rx="6" fill="#FFFFFF" stroke="#E2E8F0" />
-        <text x="130" y="446" fill="#1E293B" font-size="13" font-weight="600">19</text>
-        <rect x="126" y="458" width="92" height="24" rx="4" fill="#E0E7FF" />
-        <text x="130" y="474" fill="#3730A3" font-size="9" font-weight="600">Сети • Тест 2</text>
-        <rect x="224" y="428" width="100" height="118" rx="6" fill="#FFFFFF" stroke="#E2E8F0" />
-        <text x="232" y="446" fill="#64748B" font-size="13">20</text>
-        <rect x="326" y="428" width="100" height="118" rx="6" fill="#FFFFFF" stroke="#E2E8F0" />
-        <text x="334" y="446" fill="#64748B" font-size="13">21</text>
-        <rect x="428" y="428" width="100" height="118" rx="6" fill="#FFFFFF" stroke="#E2E8F0" />
-        <text x="436" y="446" fill="#64748B" font-size="13">22</text>
-        <rect x="530" y="428" width="100" height="118" rx="6" fill="#FFFFFF" stroke="#E2E8F0" />
-        <text x="538" y="446" fill="#64748B" font-size="13">23</text>
-        <rect x="632" y="428" width="100" height="118" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2" />
-        <circle cx="646" cy="442" r="10" fill="#3B82F6" />
-        <text x="646" y="446" fill="#FFFFFF" font-size="11" font-weight="700" text-anchor="middle">24</text>
-        <text x="664" y="446" fill="#1E40AF" font-size="10" font-weight="600">Сегодня</text>
-        <rect x="20" y="552" width="100" height="118" rx="6" fill="#FFFFFF" stroke="#E2E8F0" />
-        <text x="28" y="570" fill="#64748B" font-size="13">25</text>
-        <rect x="122" y="552" width="100" height="118" rx="6" fill="#FFFFFF" stroke="#E2E8F0" />
-        <text x="130" y="570" fill="#64748B" font-size="13">26</text>
-        <rect x="224" y="552" width="100" height="118" rx="6" fill="#FFFFFF" stroke="#E2E8F0" />
-        <text x="232" y="570" fill="#64748B" font-size="13">27</text>
-        <!-- Day 28: High Peak Load N(d) = 3 -->
-        <rect x="326" y="552" width="100" height="118" rx="6" fill="#FEF2F2" stroke="#EF4444" stroke-width="2" />
-        <text x="334" y="570" fill="#991B1B" font-size="14" font-weight="800">28</text>
-        <rect x="356" y="558" width="64" height="16" rx="4" fill="#EF4444" />
-        <text x="388" y="570" fill="#FFFFFF" font-size="9" font-weight="700" text-anchor="middle">ПИК: 3 ДЕДЛ.</text>
+        <!-- Day columns header -->
+        <text x="70" y="28" fill="#A1A1AA" font-size="11" font-weight="500" text-anchor="middle">Пн</text>
+        <text x="170" y="28" fill="#A1A1AA" font-size="11" font-weight="500" text-anchor="middle">Вт</text>
+        <text x="270" y="28" fill="#A1A1AA" font-size="11" font-weight="500" text-anchor="middle">Ср</text>
+        <text x="370" y="28" fill="#A1A1AA" font-size="11" font-weight="500" text-anchor="middle">Чт</text>
+        <text x="470" y="28" fill="#A1A1AA" font-size="11" font-weight="500" text-anchor="middle">Пт</text>
+        <text x="570" y="28" fill="#A1A1AA" font-size="11" font-weight="500" text-anchor="middle">Сб</text>
+        <text x="670" y="28" fill="#A1A1AA" font-size="11" font-weight="500" text-anchor="middle">Вс</text>
+        <line x1="0" y1="40" x2="740" y2="40" stroke="#F4F4F5" />
+        <rect x="10" y="48" width="98" height="120" fill="#FAFAFA" />
+        <rect x="112" y="48" width="98" height="120" fill="#FAFAFA" />
+        <rect x="214" y="48" width="98" height="120" fill="#FAFAFA" />
+        <rect x="316" y="48" width="98" height="120" fill="#FAFAFA" />
+        <rect x="418" y="48" width="98" height="120" rx="4" fill="#FFFFFF" stroke="#F4F4F5" />
+        <text x="426" y="64" fill="#71717A" font-size="12">1</text>
+        <rect x="520" y="48" width="98" height="120" rx="4" fill="#FFFFFF" stroke="#F4F4F5" />
+        <text x="528" y="64" fill="#71717A" font-size="12">2</text>
+        <rect x="622" y="48" width="98" height="120" rx="4" fill="#FFFFFF" stroke="#F4F4F5" />
+        <text x="630" y="64" fill="#71717A" font-size="12">3</text>
+        <rect x="10" y="176" width="98" height="120" rx="4" fill="#FFFFFF" stroke="#F4F4F5" />
+        <text x="18" y="192" fill="#71717A" font-size="12">4</text>
+        <rect x="112" y="176" width="98" height="120" rx="4" fill="#FFFFFF" stroke="#F4F4F5" />
+        <text x="120" y="192" fill="#71717A" font-size="12">5</text>
+        <rect x="214" y="176" width="98" height="120" rx="4" fill="#FFFFFF" stroke="#F4F4F5" />
+        <text x="222" y="192" fill="#71717A" font-size="12">6</text>
+        <rect x="316" y="176" width="98" height="120" rx="4" fill="#FFFFFF" stroke="#F4F4F5" />
+        <text x="324" y="192" fill="#71717A" font-size="12">7</text>
+        <rect x="418" y="176" width="98" height="120" rx="4" fill="#FFFFFF" stroke="#F4F4F5" />
+        <text x="426" y="192" fill="#71717A" font-size="12">8</text>
+        <rect x="520" y="176" width="98" height="120" rx="4" fill="#FFFFFF" stroke="#F4F4F5" />
+        <text x="528" y="192" fill="#71717A" font-size="12">9</text>
+        <rect x="622" y="176" width="98" height="120" rx="4" fill="#FFFFFF" stroke="#F4F4F5" />
+        <text x="630" y="192" fill="#71717A" font-size="12">10</text>
+        <rect x="10" y="304" width="98" height="120" rx="4" fill="#FFFFFF" stroke="#F4F4F5" />
+        <text x="18" y="320" fill="#71717A" font-size="12">11</text>
+        <rect x="112" y="304" width="98" height="120" rx="4" fill="#FFFFFF" stroke="#F4F4F5" />
+        <text x="120" y="320" fill="#71717A" font-size="12">12</text>
+        <rect x="116" y="328" width="90" height="20" rx="3" fill="#F4F4F5" />
+        <text x="120" y="342" fill="#52525B" font-size="9">Сети • Тест</text>
+        <rect x="214" y="304" width="98" height="120" rx="4" fill="#FFFFFF" stroke="#F4F4F5" />
+        <text x="222" y="320" fill="#71717A" font-size="12">13</text>
+        <rect x="316" y="304" width="98" height="120" rx="4" fill="#FFFFFF" stroke="#F4F4F5" />
+        <text x="324" y="320" fill="#71717A" font-size="12">14</text>
+        <rect x="418" y="304" width="98" height="120" rx="4" fill="#FFFFFF" stroke="#F4F4F5" />
+        <text x="426" y="320" fill="#71717A" font-size="12">15</text>
+        <rect x="520" y="304" width="98" height="120" rx="4" fill="#FFFFFF" stroke="#F4F4F5" />
+        <text x="528" y="320" fill="#71717A" font-size="12">16</text>
+        <rect x="622" y="304" width="98" height="120" rx="4" fill="#FFFFFF" stroke="#F4F4F5" />
+        <text x="630" y="320" fill="#71717A" font-size="12">17</text>
+        <rect x="10" y="432" width="98" height="120" rx="4" fill="#FFFFFF" stroke="#F4F4F5" />
+        <text x="18" y="448" fill="#71717A" font-size="12">18</text>
+        <rect x="112" y="432" width="98" height="120" rx="4" fill="#FFFFFF" stroke="#F4F4F5" />
+        <text x="120" y="448" fill="#71717A" font-size="12">19</text>
+        <rect x="116" y="456" width="90" height="20" rx="3" fill="#F4F4F5" />
+        <text x="120" y="470" fill="#52525B" font-size="9">Сети • Тест</text>
+        <rect x="214" y="432" width="98" height="120" rx="4" fill="#FFFFFF" stroke="#F4F4F5" />
+        <text x="222" y="448" fill="#71717A" font-size="12">20</text>
+        <rect x="316" y="432" width="98" height="120" rx="4" fill="#FFFFFF" stroke="#F4F4F5" />
+        <text x="324" y="448" fill="#71717A" font-size="12">21</text>
+        <rect x="418" y="432" width="98" height="120" rx="4" fill="#FFFFFF" stroke="#F4F4F5" />
+        <text x="426" y="448" fill="#71717A" font-size="12">22</text>
+        <rect x="520" y="432" width="98" height="120" rx="4" fill="#FFFFFF" stroke="#F4F4F5" />
+        <text x="528" y="448" fill="#71717A" font-size="12">23</text>
+        <rect x="622" y="432" width="98" height="120" rx="4" fill="#FFFFFF" stroke="#18181B" stroke-width="1.5" />
+        <text x="630" y="448" fill="#18181B" font-size="12" font-weight="700">24</text>
+        <rect x="626" y="456" width="90" height="20" rx="3" fill="#F4F4F5" />
+        <text x="630" y="470" fill="#18181B" font-size="9">ОС • Дедлайн</text>
+        <rect x="10" y="560" width="98" height="120" rx="4" fill="#FFFFFF" stroke="#F4F4F5" />
+        <text x="18" y="576" fill="#71717A" font-size="12">25</text>
+        <rect x="112" y="560" width="98" height="120" rx="4" fill="#FFFFFF" stroke="#F4F4F5" />
+        <text x="120" y="576" fill="#71717A" font-size="12">26</text>
+        <rect x="214" y="560" width="98" height="120" rx="4" fill="#FFFFFF" stroke="#F4F4F5" />
+        <text x="222" y="576" fill="#71717A" font-size="12">27</text>
+        <!-- Peak Day 28 -->
+        <rect x="316" y="560" width="98" height="120" rx="4" fill="#FEF2F2" stroke="#FCA5A5" />
+        <text x="324" y="576" fill="#991B1B" font-size="12" font-weight="600">28</text>
+        <rect x="360" y="566" width="46" height="14" rx="3" fill="#EF4444" />
+        <text x="383" y="576" fill="#FFFFFF" font-size="8" font-weight="600" text-anchor="middle">3 задачи</text>
         
-        <!-- 3 Deadlines on Day 28 -->
-        <rect x="330" y="578" width="92" height="26" rx="4" fill="#FEE2E2" />
-        <text x="334" y="594" fill="#991B1B" font-size="9" font-weight="700">ОС • ЛР №3 [П]</text>
+        <rect x="320" y="584" width="90" height="24" rx="3" fill="#FFFFFF" stroke="#FECACA" />
+        <text x="324" y="598" fill="#991B1B" font-size="9" font-weight="500">ОС • ЛР №3</text>
         
-        <rect x="330" y="608" width="92" height="26" rx="4" fill="#FEF3C7" />
-        <text x="334" y="624" fill="#92400E" font-size="9" font-weight="700">СПО • ПР №4 [ПГ1]</text>
+        <rect x="320" y="612" width="90" height="24" rx="3" fill="#FFFFFF" stroke="#FED7AA" />
+        <text x="324" y="626" fill="#9A3412" font-size="9" font-weight="500">СПО • ПР №4</text>
         
-        <rect x="330" y="638" width="92" height="26" rx="4" fill="#DBEAFE" />
-        <text x="334" y="654" fill="#1E40AF" font-size="9" font-weight="700">БД • Эскиз [ОБЩ]</text>
-        <rect x="428" y="552" width="100" height="118" rx="6" fill="#FFFFFF" stroke="#E2E8F0" />
-        <text x="436" y="570" fill="#64748B" font-size="13">29</text>
-        <rect x="530" y="552" width="100" height="118" rx="6" fill="#FFFFFF" stroke="#E2E8F0" />
-        <text x="538" y="570" fill="#64748B" font-size="13">30</text>
-        <rect x="632" y="552" width="100" height="118" rx="6" fill="#FFFFFF" stroke="#E2E8F0" />
-        <text x="640" y="570" fill="#1E293B" font-size="13" font-weight="600">31</text>
-        <rect x="636" y="582" width="92" height="24" rx="4" fill="#E0E7FF" />
-        <text x="640" y="598" fill="#3730A3" font-size="9" font-weight="600">Сети • Тест 2</text>
+        <rect x="320" y="640" width="90" height="24" rx="3" fill="#FFFFFF" stroke="#BFDBFE" />
+        <text x="324" y="654" fill="#1E40AF" font-size="9" font-weight="500">БД • Эскиз</text>
+        <rect x="418" y="560" width="98" height="120" rx="4" fill="#FFFFFF" stroke="#F4F4F5" />
+        <text x="426" y="576" fill="#71717A" font-size="12">29</text>
+        <rect x="520" y="560" width="98" height="120" rx="4" fill="#FFFFFF" stroke="#F4F4F5" />
+        <text x="528" y="576" fill="#71717A" font-size="12">30</text>
+        <rect x="622" y="560" width="98" height="120" rx="4" fill="#FFFFFF" stroke="#F4F4F5" />
+        <text x="630" y="576" fill="#71717A" font-size="12">31</text>
+        <rect x="626" y="584" width="90" height="20" rx="3" fill="#F4F4F5" />
+        <text x="630" y="598" fill="#52525B" font-size="9">Сети • Тест</text>
       </g>
       
-      <!-- Right Side Drawer: Selected Day Details (Wednesday Oct 28) -->
-      <g id="SelectedDayPanel" transform="translate(780, 0)" filter="url(#card-shadow)">
-        <rect width="336" height="690" rx="12" fill="#FFFFFF" stroke="#E2E8F0" />
+      <!-- Right Side Selected Day Panel -->
+      <g id="SelectedDay" transform="translate(760, 0)">
+        <rect width="305" height="700" rx="8" fill="#FFFFFF" stroke="#E5E7EB" />
         
-        <rect x="20" y="20" width="296" height="74" rx="10" fill="#FEF2F2" stroke="#FCA5A5" />
-        <text x="36" y="44" fill="#991B1B" font-size="15" font-weight="700">🔥 Среда, 28 октября 2026</text>
-        <text x="36" y="66" fill="#B91C1C" font-size="12">Индикатор высокой нагрузки: N(d) = 3 ≥ 3</text>
-        <text x="36" y="80" fill="#7F1D1D" font-size="11">Рекомендуется начать выполнение заранее!</text>
+        <text x="20" y="32" fill="#18181B" font-size="14" font-weight="600">28 октября 2026, Среда</text>
+        <text x="20" y="50" fill="#DC2626" font-size="11" font-weight="500">Высокая нагрузка: N(d) = 3 дедлайна</text>
         
-        <text x="20" y="124" fill="#0F172A" font-size="14" font-weight="700">Сроки сдачи в этот день:</text>
+        <line x1="20" y1="64" x2="285" y2="64" stroke="#F4F4F5" />
         
-        <!-- Item 1 -->
-        <g id="SideItem-1" transform="translate(20, 140)">
-          <rect width="296" height="96" rx="8" fill="#F8FAFC" stroke="#EF4444" stroke-width="1.5" />
-          <text x="14" y="24" fill="#DC2626" font-size="11" font-weight="700">⭐ ПЕРСОНАЛЬНЫЙ ДЕДЛАЙН • 23:59</text>
-          <text x="14" y="46" fill="#0F172A" font-size="13" font-weight="700">ОС • Лабораторная работа №3</text>
-          <text x="14" y="66" fill="#64748B" font-size="11">Вариант: 7 • Преп. Сидоров В.П.</text>
-          <rect x="14" y="74" width="76" height="16" rx="4" fill="#FEE2E2" />
-          <text x="52" y="86" fill="#991B1B" font-size="10" font-weight="700" text-anchor="middle">В процессе</text>
-        </g>
-        
-        <!-- Item 2 -->
-        <g id="SideItem-2" transform="translate(20, 248)">
-          <rect width="296" height="96" rx="8" fill="#F8FAFC" stroke="#E2E8F0" />
-          <text x="14" y="24" fill="#D97706" font-size="11" font-weight="700">👥 ПОДГРУППА №1 • 18:00</text>
-          <text x="14" y="46" fill="#0F172A" font-size="13" font-weight="700">СПО • Практика №4</text>
-          <text x="14" y="66" fill="#64748B" font-size="11">Вариант: 1 • Преп. Ковалёв А.Н.</text>
-          <rect x="14" y="74" width="76" height="16" rx="4" fill="#FEF3C7" />
-          <text x="52" y="86" fill="#92400E" font-size="10" font-weight="700" text-anchor="middle">Не начато</text>
-        </g>
-        
-        <!-- Item 3 -->
-        <g id="SideItem-3" transform="translate(20, 356)">
-          <rect width="296" height="96" rx="8" fill="#F8FAFC" stroke="#E2E8F0" />
-          <text x="14" y="24" fill="#2563EB" font-size="11" font-weight="700">🌐 ОБЩИЙ ДЕДЛАЙН • 20:00</text>
-          <text x="14" y="46" fill="#0F172A" font-size="13" font-weight="700">Базы данных • Эскиз ERD</text>
-          <text x="14" y="66" fill="#64748B" font-size="11">Все студенты • Преп. Клебан А.С.</text>
-          <rect x="14" y="74" width="100" height="16" rx="4" fill="#DBEAFE" />
-          <text x="64" y="86" fill="#1E40AF" font-size="10" font-weight="700" text-anchor="middle">Сдано на проверку</text>
-        </g>
-        
-        <!-- Advice Box -->
-        <g transform="translate(20, 470)">
-          <rect width="296" height="90" rx="8" fill="#F0FDF4" stroke="#86EFAC" />
-          <text x="14" y="26" fill="#15803D" font-size="12" font-weight="700">💡 Совет старосты:</text>
-          <text x="14" y="48" fill="#166534" font-size="11">Сдайте практику по СПО заранее во вторник,</text>
-          <text x="14" y="66" fill="#166534" font-size="11">чтобы разгрузить вечер среды.</text>
+        <g transform="translate(20, 80)">
+          <!-- Item 1 -->
+          <text x="0" y="14" fill="#71717A" font-size="11">23:59 • Персональный срок</text>
+          <text x="0" y="32" fill="#18181B" font-size="13" font-weight="600">ОС • Лабораторная работа №3</text>
+          <text x="0" y="48" fill="#52525B" font-size="11">Вариант 7 • Сидоров В.П.</text>
+          <line x1="0" y1="64" x2="265" y2="64" stroke="#F4F4F5" />
+          
+          <!-- Item 2 -->
+          <g transform="translate(0, 80)">
+            <text x="0" y="14" fill="#71717A" font-size="11">18:00 • Подгруппа 1</text>
+            <text x="0" y="32" fill="#18181B" font-size="13" font-weight="600">СПО • Практическая работа №4</text>
+            <text x="0" y="48" fill="#52525B" font-size="11">Вариант 1 • Ковалёв А.Н.</text>
+            <line x1="0" y1="64" x2="265" y2="64" stroke="#F4F4F5" />
+          </g>
+          
+          <!-- Item 3 -->
+          <g transform="translate(0, 160)">
+            <text x="0" y="14" fill="#71717A" font-size="11">20:00 • Общий срок</text>
+            <text x="0" y="32" fill="#18181B" font-size="13" font-weight="600">Базы данных • Эскиз ERD</text>
+            <text x="0" y="48" fill="#52525B" font-size="11">Вся группа • Клебан А.С.</text>
+          </g>
         </g>
       </g>
     </g>
