@@ -1,0 +1,109 @@
+<svg width="1440" height="900" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <filter id="auth-shadow" x="-10" y="-5" width="115%" height="115%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#0F172A" flood-opacity="0.1" />
+    </filter>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EEF2FF" />
+      <stop offset="100%" stop-color="#E0E7FF" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="1440" height="900" fill="url(#bg-grad)" />
+  
+  <!-- Left Side: Promo & Benefits -->
+  <g id="PromoSection" transform="translate(140, 200)">
+    <rect width="48" height="48" rx="12" fill="#4F46E5" />
+    <text x="24" y="32" fill="#FFFFFF" font-size="24" text-anchor="middle">⏱</text>
+    
+    <text x="0" y="90" fill="#0F172A" font-size="34" font-weight="900">StudyPulse</text>
+    <text x="0" y="126" fill="#4F46E5" font-size="18" font-weight="700">Учёт заданий и дедлайнов учебной группы</text>
+    
+    <text x="0" y="174" fill="#334155" font-size="15">• Единое расписание сроков без потерь в чатах</text>
+    <text x="0" y="206" fill="#334155" font-size="15">• Детерминированное закрепление вариантов заданий</text>
+    <text x="0" y="238" fill="#334155" font-size="15">• Официальная верификация старостой статуса «Зачтено»</text>
+    <text x="0" y="270" fill="#334155" font-size="15">• Интеллектуальный календарь с подсчётом дней пиковой нагрузки</text>
+    
+    <!-- Law Compliance Box -->
+    <g transform="translate(0, 330)">
+      <rect width="440" height="86" rx="10" fill="#FFFFFF" stroke="#CBD5E1" />
+      <text x="20" y="30" fill="#059669" font-size="13" font-weight="700">🛡 Безопасность и защита персональных данных</text>
+      <text x="20" y="52" fill="#64748B" font-size="12">Сервис разработан в строгом соответствии с Законом</text>
+      <text x="20" y="70" fill="#64748B" font-size="12">Республики Беларусь от 7 мая 2021 г. № 99-З.</text>
+    </g>
+  </g>
+  
+  <!-- Right Side: Registration / Invite Auth Card (480 x 680) -->
+  <g id="AuthCard" transform="translate(760, 110)" filter="url(#auth-shadow)">
+    <rect width="480" height="680" rx="16" fill="#FFFFFF" />
+    
+    <!-- Tabs: [Вход] / [Регистрация по инвайту] -->
+    <g transform="translate(36, 32)">
+      <rect width="408" height="44" rx="8" fill="#F1F5F9" />
+      
+      <rect x="4" y="4" width="198" height="36" rx="6" fill="#FFFFFF" />
+      <text x="103" y="27" fill="#0F172A" font-size="13" font-weight="700" text-anchor="middle">Вход в систему</text>
+      
+      <rect x="206" y="4" width="198" height="36" rx="6" fill="#4F46E5" />
+      <text x="305" y="27" fill="#FFFFFF" font-size="13" font-weight="700" text-anchor="middle">Регистрация по инвайту</text>
+    </g>
+    
+    <!-- Form Fields -->
+    <g transform="translate(36, 102)">
+      <!-- Field 1: Invite Code -->
+      <g>
+        <text x="0" y="14" fill="#0F172A" font-size="12" font-weight="700">ИНВАЙТ-КОД ГРУППЫ (ОТ СТАРОСТЫ):</text>
+        <rect y="22" width="408" height="44" rx="8" fill="#F8FAFC" stroke="#818CF8" stroke-width="2" />
+        <text x="14" y="50" fill="#4F46E5" font-size="14" font-weight="700">GRP-921701-X8F9</text>
+        <text x="350" y="50" fill="#10B981" font-size="12" font-weight="700">✓ Найдена</text>
+        
+        <rect y="72" width="408" height="32" rx="6" fill="#F0FDF4" />
+        <text x="12" y="92" fill="#166534" font-size="11" font-weight="600">Группа: 921701 • ФКСиС • 2026/2027 уч. год</text>
+      </g>
+      
+      <!-- Field 2: Full Name -->
+      <g transform="translate(0, 116)">
+        <text x="0" y="14" fill="#0F172A" font-size="12" font-weight="700">ФИО СТУДЕНТА (КАК В ЗАЧЁТКЕ):</text>
+        <rect y="22" width="408" height="42" rx="8" fill="#F8FAFC" stroke="#CBD5E1" />
+        <text x="14" y="48" fill="#0F172A" font-size="13">Кабердин Данила Сергеевич</text>
+      </g>
+      
+      <!-- Field 3: Subgroup -->
+      <g transform="translate(0, 192)">
+        <text x="0" y="14" fill="#0F172A" font-size="12" font-weight="700">ПОДГРУППА:</text>
+        <rect y="22" width="408" height="42" rx="8" fill="#F8FAFC" stroke="#CBD5E1" />
+        <text x="14" y="48" fill="#0F172A" font-size="13">Подгруппа №1</text>
+        <text x="380" y="48" fill="#64748B" font-size="12">▼</text>
+      </g>
+      
+      <!-- Field 4: Email & Password -->
+      <g transform="translate(0, 268)">
+        <text x="0" y="14" fill="#0F172A" font-size="12" font-weight="700">EMAIL И ПАРОЛЬ:</text>
+        <rect y="22" width="408" height="42" rx="8" fill="#F8FAFC" stroke="#CBD5E1" />
+        <text x="14" y="48" fill="#0F172A" font-size="13">danila.kaberdin@bsuir.by</text>
+        
+        <rect y="72" width="408" height="42" rx="8" fill="#F8FAFC" stroke="#CBD5E1" />
+        <text x="14" y="98" fill="#64748B" font-size="13">••••••••••••••••</text>
+      </g>
+      
+      <!-- Anti-Brute-Force Notice -->
+      <g transform="translate(0, 396)">
+        <rect width="408" height="50" rx="6" fill="#FEF3C7" stroke="#FDE68A" />
+        <text x="12" y="20" fill="#92400E" font-size="11" font-weight="700">🔒 Ступенчатая защита от брутфорса:</text>
+        <text x="12" y="38" fill="#78350F" font-size="11">5 неверных попыток → CAPTCHA; 10 попыток → блок на 15 мин.</text>
+      </g>
+      
+      <!-- Consent Checkbox -->
+      <g transform="translate(0, 460)">
+        <rect width="18" height="18" rx="4" fill="#4F46E5" />
+        <text x="9" y="14" fill="#FFFFFF" font-size="12" text-anchor="middle">✓</text>
+        <text x="28" y="14" fill="#475569" font-size="11">Даю согласие на обработку персональных данных (ФИО,</text>
+        <text x="28" y="28" fill="#475569" font-size="11">успеваемость) согласно Закону РБ № 99-З</text>
+      </g>
+      
+      <!-- Submit Button -->
+      <rect y="504" width="408" height="46" rx="8" fill="#4F46E5" />
+      <text x="204" y="532" fill="#FFFFFF" font-size="14" font-weight="700" text-anchor="middle">Зарегистрироваться в группе</text>
+    </g>
+  </g>
+</svg>
