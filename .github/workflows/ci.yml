@@ -57,6 +57,11 @@ jobs:
           alembic downgrade base
           alembic upgrade head
 
+      - name: Run pytest (auth, RBAC, bruteforce — блок 2 ТЗ)
+        working-directory: backend
+        env:
+          KV_BACKEND: memory
+        run: pytest -q
 
   frontend-ci:
     name: Frontend (ESLint & Vite Production Build)
