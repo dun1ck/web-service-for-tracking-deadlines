@@ -2,6 +2,8 @@
 
 Кроссплатформенное клиент-серверное веб-приложение для централизованного планирования, мониторинга и контроля сроков сдачи учебных заданий студенческой группы.
 
+---
+
 ## 🎯 Назначение и цели проекта
 
 Сервис решает проблему академических задолженностей и потери информации о сроках сдачи учебных работ за счёт создания единого цифрового пространства группы:
@@ -55,13 +57,13 @@
 
 ## 🏛 Архитектура и стек технологий
 
-* **Архитектурный шаблон**: трехзвенная архитектура (SPA-клиент + REST API + Реляционная СУБД).
-* **Frontend**: React / Vue.js (Single Page Application, адаптивная верстка Mobile-First от 360px до 4K, поддержка светлой и темной тем).
-* **Backend**: Python 3.10+ (FastAPI) / Node.js, ORM, OpenAPI/Swagger.
-* **База данных**: PostgreSQL 15+ (транзакционная целостность ACID, аудит изменений).
-* **Кэширование и очереди**: Redis (Rate Limiting, учет попыток входа, сессии).
+* **Архитектурный шаблон**: трехзвенная клиент-серверная архитектура (SPA-клиент + REST API + Реляционная СУБД).
+* **Frontend**: React 18 + TypeScript / Vite (Single Page Application, адаптивная вёрстка, навигация в 2–3 клика).
+* **Backend**: Python 3.11+ (FastAPI), SQLAlchemy 2.0 (ORM), Alembic, Pydantic v2, Python-Jose (JWT), Bcrypt.
+* **База данных**: PostgreSQL 15+ (14 таблиц, 7 ENUM, транзакционная целостность ACID, аудит изменений).
+* **Кэширование и защита**: Redis 7 (Rate Limiting, учет попыток входа, CAPTCHA, сессии).
 * **Хранилище файлов**: S3-совместимое объектное хранилище (MinIO).
-* **Инфраструктура**: Docker Compose, Nginx (TLS 1.3 HTTPS), автоматический бэкап БД.
+* **Инфраструктура**: Docker Compose, Nginx, GitHub Actions CI/CD.
 
 ### Производительность и эргономика:
 * Время первичной загрузки страницы (LCP): $\le 2.0$ сек (Fast 4G / Broadband).
@@ -70,54 +72,94 @@
 
 ---
 
-## 📁 Проектирование базы данных
+## 📁 Проектирование базы данных и макетов
 
-* **Схемы и DDL базы данных (`Схемы_БД/`)**:
-  * [`Схемы_БД/database_model.qea`](./Схемы_БД/database_model.qea) — единый проект **Sparx Systems Enterprise Architect (`.qea`)**, содержащий 6 связанных диаграмм (концептуальную, 3 логические по подсистемам, полную физическую ER-диаграмму из 14 таблиц PostgreSQL и диаграмму аналитических представлений `Views`);
-  * [`Схемы_БД/schema_postgresql.sql`](./Схемы_БД/schema_postgresql.sql) — полный DDL-скрипт создания таблиц, индексов и представлений для PostgreSQL 15+;
-  * [`Схемы_БД/README.md`](./Схемы_БД/README.md) — подробное описание таблиц, связей и реализации бизнес-логики в БД.
+* **База данных (`Схемы_БД/`)**:
+  * [`Схемы_БД/database_model.qea`](./Схемы_БД/database_model.qea) — проект **Enterprise Architect (`.qea`)** (концептуальная, 3 логических подсистемы, физическая ERD из 14 таблиц PostgreSQL и представления `Views`);
+  * [`Схемы_БД/schema_postgresql.sql`](./Схемы_БД/schema_postgresql.sql) — DDL-скрипт создания таблиц, индексов и представлений для PostgreSQL 15+;
+  * [`Схемы_БД/ERD_диаграмма.md`](./Схемы_БД/ERD_диаграмма.md) — подробное описание структуры таблиц, связей и реализации бизнес-логики.
+* **Дизайн-макеты интерфейсов (`Макеты_Figma/`)**:
+  * Векторные экраны (`.svg`, 1440×900 px, палитра Clean SaaS): дашборд студента, интерактивный календарь с нагрузкой $N(d) \ge 3$, детальная карточка задания и сдача работы, сводная матрица успеваемости старосты, окно верификации («Зачтено»), форма входа и регистрации по инвайт-коду группы;
+  * [`Макеты_Figma/README.md`](./Макеты_Figma/README.md) — инструкция по открытию в Figma и спецификация компонентов.
 
 ---
 
 ## 🗂 Структура репозитория
 
 ```text
-├── .github/workflows/ci.yml   # GitHub Actions CI/CD (линтеры, тесты, проверка миграций и сборки)
+├── .github/workflows/ci.yml   # GitHub Actions CI/CD (линтеры, проверка миграций Alembic и сборки)
 ├── backend/                   # Backend-сервер (Python 3.11, FastAPI, SQLAlchemy 2.0, Alembic)
 │   ├── alembic/               # Конфигурация и ревизии миграций БД (0001_initial_schema.py)
 │   ├── app/
-│   │   ├── api/               # REST API роутеры (/api/v1/health и др.)
-│   │   ├── core/              # Конфигурация (Pydantic Settings) и подключение к PostgreSQL
+│   │   ├── api/
+│   │   │   ├── deps.py        # Зависимости аутентификации, извлечение IP и RBAC-фильтры ролей
+│   │   │   ├── router.py      # Маршрутизатор API v1 (/api/v1/health и подключение роутов)
+│   │   │   └── routes/
+│   │   │       ├── auth.py    # Регистрация (студент/староста), логин, refresh токенов, CAPTCHA
+│   │   │       └── groups.py  # Управление составом группы, инвайт-коды, подтверждение заявок
+│   │   ├── core/              # Конфигурация (Pydantic Settings), безопасность (JWT/Bcrypt), БД и Redis
 │   │   ├── models/            # Все 14 ORM-моделей SQLAlchemy 2.0
-│   │   └── main.py            # Точка входа FastAPI + автогенерация Swagger / OpenAPI
-│   ├── tests/                 # Автотесты Pytest (проверка схемы БД, OpenAPI и healthcheck)
-│   ├── Dockerfile             # Образ Backend-приложения
-│   ├── pyproject.toml         # Настройки линтера Ruff и Pytest
+│   │   ├── schemas/           # Pydantic-схемы валидации запросов и сериализации ответов
+│   │   ├── services/          # Бизнес-логика защиты от брутфорса, аудит (audit_log), группы
+│   │   └── main.py            # Точка входа FastAPI + автогенерация Swagger UI / OpenAPI
+│   ├── tests/                 # Директория автотестов для тестировщика (pytest)
+│   ├── Dockerfile             # Сборка контейнера Backend
+│   ├── pyproject.toml         # Настройки линтера Ruff
 │   └── requirements.txt       # Зависимости Python
 ├── frontend/                  # SPA-клиент (React 18, Vite, React Router v6)
-│   ├── src/                   # Компоненты, лейаут и маршрутизация всех разделов (п. 4.6 ТЗ)
+│   ├── src/                   # Компоненты, лейаут и маршрутизация разделов приложения
 │   ├── Dockerfile             # Multi-stage сборка (Node 20 -> Nginx Alpine)
 │   └── nginx.conf             # Конфигурация Nginx (SPA fallback + проксирование /api)
-├── Схемы_БД/                  # Проект Enterprise Architect (.qea) и DDL-скрипт PostgreSQL
+├── Схемы_БД/                  # Проект Enterprise Architect (.qea), DDL-скрипт и ERD
+├── Макеты_Figma/              # Векторные SVG-макеты интерфейсов для импорта в Figma
+├── Тех.задание/               # Официальное утверждённое Техническое задание проекта
 ├── .env.example               # Шаблон переменных окружения
 └── docker-compose.yml         # Полный стек: PostgreSQL 15, Redis 7, MinIO S3, Backend, Frontend
 ```
 
 ---
 
-## 🚀 Быстрый запуск (Docker Compose)
+## 🚀 Быстрый запуск
+
+### Вариант 1: Полный стек в Docker Compose
 
 1. Скопируйте шаблон переменных окружения:
    ```bash
    cp .env.example .env
    ```
-2. Запустите все сервисы одной командой:
+2. Запустите все сервисы:
    ```bash
    docker compose up --build -d
    ```
 3. Доступные адреса после запуска:
-   * **Frontend (React SPA)**: `http://localhost` (или `http://localhost:5173` при локальном запуске через `npm run dev`)
+   * **Frontend (React SPA)**: `http://localhost` (порт 80)
    * **Backend REST API & Swagger UI**: `http://localhost:8000/docs`
    * **ReDoc документация**: `http://localhost:8000/redoc`
    * **OpenAPI JSON-спецификация**: `http://localhost:8000/openapi.json`
-   * **MinIO Console (S3-хранилище)**: `http://localhost:9001`
+   * **MinIO Console (S3-хранилище)**: `http://localhost:9001` (логин: `minioadmin`, пароль: `minioadmin_secret`)
+
+---
+
+### Вариант 2: Локальный запуск Backend для разработки
+
+1. Перейдите в директорию `backend`:
+   ```bash
+   cd backend
+   ```
+2. Создайте и активируйте виртуальное окружение:
+   ```bash
+   python -m venv .venv
+   # Windows:
+   .\.venv\Scripts\activate
+   # Linux/macOS:
+   source .venv/bin/activate
+   ```
+3. Установите зависимости:
+   ```bash
+   pip install -r requirements.txt
+   ```
+4. Запустите сервер разработки:
+   ```bash
+   uvicorn app.main:app --reload --port 8000
+   ```
+5. Откройте интерактивную документацию Swagger UI: **[http://localhost:8000/docs](http://localhost:8000/docs)**.
