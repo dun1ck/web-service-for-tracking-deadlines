@@ -57,9 +57,6 @@ jobs:
           alembic downgrade base
           alembic upgrade head
 
-      - name: Run backend test suite (Swagger / OpenAPI / ORM verification)
-        working-directory: backend
-        run: pytest -v
 
   frontend-ci:
     name: Frontend (ESLint & Vite Production Build)

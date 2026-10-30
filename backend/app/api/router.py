@@ -2,10 +2,13 @@
 
 from fastapi import APIRouter
 
+from app.api.routes import auth, groups
 from app.core.config import settings
 from app.models import Base
 
 api_router = APIRouter()
+api_router.include_router(auth.router)
+api_router.include_router(groups.router)
 
 
 @api_router.get("/health", tags=["Система и Мониторинг"], summary="Проверка состояния сервиса (Healthcheck)")

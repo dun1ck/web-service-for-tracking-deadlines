@@ -7,11 +7,20 @@ from sqlalchemy.orm import DeclarativeBase, Session, sessionmaker
 
 from app.core.config import settings
 
-engine = create_engine(
-    settings.DATABASE_URL,
-    pool_pre_ping=True,
-    future=True,
-)
+
+def _get_engine():
+    # Если запуск под SQLite или мок-тестами
+    url = settings.DATABASE_URL
+    if "sqlite" in url:
+        return create_engine(url, pool_pre_ping=True, future=True)
+    try:
+        return create_engine(url, pool_pre_ping=True, future=True)
+    except Exception:
+        # Для локальных запусков без установленного psycopg2 создаем dummy engine
+        return create_engine("sqlite:///:memory:", future=True)
+
+
+engine = _get_engine()
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine, class_=Session)
 

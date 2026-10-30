@@ -23,6 +23,8 @@ class Settings(BaseSettings):
 
     # Redis
     REDIS_URL: str = "redis://localhost:6379/0"
+    # Хранилище счётчиков входа и CAPTCHA: "auto" (Redis, при недоступности — память), "redis", "memory"
+    KV_BACKEND: str = "auto"
 
     # JWT и ступенчатая защита от брутфорса (п. 4.2.1, 4.2.2 ТЗ)
     JWT_SECRET_KEY: str = "change_this_super_secret_jwt_key_in_production_min_32_chars"
@@ -35,6 +37,10 @@ class Settings(BaseSettings):
     BRUTEFORCE_LOCKOUT_THRESHOLD: int = 10
     BRUTEFORCE_LOCKOUT_DURATION_SECONDS: int = 900
     BRUTEFORCE_IP_THRESHOLD: int = 20
+    CAPTCHA_TTL_SECONDS: int = 300
+
+    # Инвайт-коды учебных групп (п. 4.2.1.1 ТЗ)
+    INVITE_CODE_TTL_DAYS: int = 30
 
     # Хранилище файлов S3 / MinIO и политика проверки архивов (п. 4.11.3, 4.11.5 ТЗ)
     S3_ENDPOINT_URL: str = "http://localhost:9000"
